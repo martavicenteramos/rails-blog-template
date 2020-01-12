@@ -1,7 +1,7 @@
 <img src="https://images.unsplash.com/photo-1578687595055-d15759a04151?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80" alt="" class="homepage-first-image">
 <div class="container">
   <% @articles.each do |art| %>
-    <%= link_to root_url do %>
+    <%= link_to article_path(art) do %>
       <h2><%= art.title %></h2>
       <p><%= art.caption %></p>
     <% end %>
