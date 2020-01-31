@@ -1,5 +1,9 @@
 <img src="https://images.unsplash.com/photo-1502741126161-b048400d085d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80" alt="" class="homepage-first-image">
 <div class="container">
+  <%= simple_form_for :filter, url: {controller: 'articles', action: 'alimentacao'}, method: :get do |f| %>
+    <%= f.input :subject, as: :select, required: false, collection: %w[Pequeno-Almoço Almoço/Jantar Snacks] %>
+    <%= f.submit :SEARCH, class: "btn-form" %>
+  <% end %>
   <% @articles.each do |art| %>
     <%= link_to article_path(art) do %>
     <div class="card-trip">
@@ -20,6 +24,3 @@
     <% end %>
   <% end %>
 </div>
-
-
-

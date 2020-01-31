@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'articles#index'
-  resources :articles, only: [:index, :show]
+  resources :articles, only: [:index, :show, :alimentacao]
+
+  get 'alimentacao', to: 'articles#alimentacao'
+  get 'desporto', to: 'articles#desporto'
+
+  get 'home', to: 'pages#home', as: :home
 
   namespace :admin do
     resources :articles
